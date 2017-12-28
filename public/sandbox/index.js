@@ -160,6 +160,6 @@ bootModule.boot().then(function(ctx) {
   setSystemJsFetch(ctx.db)
   SystemJS.import('@gratico/paper').then(function(React) {
     console.log('loaded', React)
-    document.querySelector('#root').innerHTML = '<div class="gratico-boot-success"><h1 style="font-weight: normal;">loaded</h1></div>'
+    document.querySelector('#root').innerHTML = '<div class="gratico-boot-success"><h1 style="font-weight: normal;">loaded npm package in browser</h1></div>'
   }).catch(renderError)
 }).catch(renderError)

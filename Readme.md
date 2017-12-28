@@ -1,4 +1,10 @@
-# Getting started
+# Introduction
+
+To see how it loads any npm package in browser via unpkg please visit the following link and open you console. Files are also cached into indexdb, so you can also check that.
+
+[demo](https://rawgit.com/abhishiv/systemjs-npm-resolver/master/public/sandbox/index.html)
+
+## Getting started
 
 To build a manifest
 
