@@ -10,6 +10,6 @@ tar -xzf hyper-linux-x86_64.tar.gz
 docker build -t abhishiv/yarn-resolver .
 docker push abhishiv/yarn-resolver
 ./hyper pull abhishiv/yarn-resolver
-./hyper rmi $(hyper images -f "dangling=true" -q)
+./hyper rmi $(./hyper images -f "dangling=true" -q)
 ./hyper func rm yarn-resolver
 ./hyper func create --name yarn-resolver --size s4 --timeout=60 abhishiv/yarn-resolver
