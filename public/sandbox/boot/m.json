@@ -1,0 +1,1739 @@
+{
+  "@gratico/hypervisor@0.0.92": {
+    "version": "0.0.92",
+    "dependencies": {
+      "immstruct": "2.0.0",
+      "immutable": "3.8.2",
+      "uuid": "3.1.0"
+    },
+    "main": "src/index.js",
+    "map": {
+      "./backup/runtime": "./backup/runtime/index.js",
+      "./src/runtime": "./src/runtime/index.js"
+    }
+  },
+  "uuid@3.1.0": {
+    "version": "3.1.0",
+    "dependencies": {},
+    "browser": {
+      "./lib/rng.js": "./lib/rng-browser.js",
+      "./lib/sha1.js": "./lib/sha1-browser.js"
+    },
+    "main": "index.js",
+    "map": {}
+  },
+  "@gratico/paper@0.0.92": {
+    "version": "0.0.92",
+    "dependencies": {
+      "@gratico/hypervisor": "0.0.92",
+      "immstruct": "2.0.0",
+      "immutable": "3.8.2",
+      "keese": "1.1.1",
+      "node-uuid": "1.4.8",
+      "object-path": "0.9.2",
+      "react-codemirror": "1.0.0",
+      "react-color": "2.13.8",
+      "react-inspector": "2.2.2",
+      "react-motion": "0.4.8",
+      "react-popover": "0.4.18",
+      "react-virtualized": "8.11.4",
+      "tcomb": "3.2.24",
+      "tcomb-form": "0.9.19",
+      "tcomb-react": "0.9.3",
+      "tcomb-validation": "3.4.1",
+      "tinycolor2": "1.4.1"
+    },
+    "gratico": {
+      "applications": [{
+        "id": "co.grati.paper",
+        "meta": {
+          "name": "Paper",
+          "description": "Paper is an extensible document editor.",
+          "homepage": "https://github.com/gratico/paper",
+          "singleton": false,
+          "content_types": ["application/x-paper"],
+          "icon": "<svg version=\"1.1\" id=\"Layer_1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\"\r\n\t viewBox=\"0 0 512 512\" style=\"enable-background:new 0 0 512 512;\" xml:space=\"preserve\">\r\n<path style=\"fill:#2D527C;\" d=\"M372.221,512c-7.652,0-13.857-6.205-13.857-13.857V232.609c0-7.652,6.205-13.856,13.857-13.856\r\n\ts13.856,6.205,13.856,13.856v265.535C386.077,505.795,379.872,512,372.221,512z\"/>\r\n<path style=\"fill:#CEE8FA;\" d=\"M464.865,82.072l-92.644,92.658l-92.645-92.658c12.249-39.519,49.094-68.215,92.645-68.215\r\n\tc26.785,0,51.033,10.863,68.59,28.406C451.785,53.25,460.154,66.858,464.865,82.072z\"/>\r\n<g>\r\n\t<path style=\"fill:#2D527C;\" d=\"M372.221,188.587c-3.675,0-7.2-1.46-9.798-4.06l-92.644-92.658\r\n\t\tc-3.636-3.636-4.959-8.987-3.436-13.899C280.797,31.332,323.348,0,372.221,0c29.597,0,57.435,11.527,78.383,32.46\r\n\t\tc12.712,12.729,22.216,28.463,27.498,45.513c1.521,4.911,0.198,10.259-3.438,13.895l-92.644,92.658\r\n\t\tC379.421,187.126,375.896,188.587,372.221,188.587z M295.601,78.5l76.619,76.632l76.608-76.619\r\n\t\tc-4.154-9.817-10.225-18.85-17.822-26.459c-15.706-15.692-36.587-24.34-58.786-24.34C338.313,27.713,308.466,47.812,295.601,78.5z\"\r\n\t\t/>\r\n\t<path style=\"fill:#2D527C;\" d=\"M372.221,435.789c-4.128,0-8.038-1.839-10.671-5.017l-96.995-117.09\r\n\t\tc-2.058-2.484-3.186-5.612-3.186-8.839v-49.387c0-3.719,1.494-7.28,4.147-9.887c2.651-2.604,6.212-4.039,9.96-3.967l16.693,0.301\r\n\t\tl-29.359-59.245c-0.949-1.914-1.441-4.018-1.441-6.152v-65.653c0-11.207,1.674-22.274,4.977-32.895\r\n\t\tC280.797,31.332,323.348,0,372.221,0c29.597,0,57.435,11.527,78.383,32.46c12.712,12.729,22.216,28.463,27.498,45.513\r\n\t\tc3.296,10.6,4.97,21.669,4.97,32.88v65.653c0,7.652-6.205,13.856-13.857,13.856s-13.856-6.205-13.856-13.856v-65.655\r\n\t\tc0-8.418-1.253-16.715-3.725-24.666c-3.959-12.787-11.092-24.583-20.628-34.133c-15.706-15.692-36.587-24.34-58.786-24.34\r\n\t\tc-36.659,0-68.57,23.494-79.409,58.461c-2.476,7.965-3.73,16.263-3.73,24.678v62.408l38.035,76.755\r\n\t\tc2.149,4.336,1.879,9.476-0.708,13.564c-2.587,4.089-7.143,6.511-11.958,6.442l-25.37-0.457v30.285l83.139,100.363l83.139-100.363\r\n\t\tv-30.285l-25.368,0.457c-7.636,0.1-13.966-5.953-14.104-13.603c-0.139-7.652,5.953-13.966,13.603-14.105l39.474-0.712\r\n\t\tc0.085-0.001,0.168-0.003,0.251-0.003c3.629,0,7.117,1.423,9.709,3.97c2.654,2.606,4.147,6.168,4.147,9.887v49.387\r\n\t\tc0,3.227-1.126,6.355-3.186,8.839l-96.995,117.09C380.259,433.951,376.349,435.789,372.221,435.789z\"/>\r\n</g>\r\n<path style=\"fill:#CEE8FA;\" d=\"M202.712,358.735H82.393c-3.849,0-7.469,1.832-9.749,4.933l-27.507,37.408\r\n\tc-1.528,2.078-2.351,4.589-2.351,7.168v77.799c0,6.683,5.418,12.101,12.101,12.101h175.332c6.683,0,12.101-5.418,12.101-12.101\r\n\tv-77.799c0-2.579-0.824-5.091-2.351-7.168l-27.507-37.41C210.18,360.567,206.56,358.735,202.712,358.735z\"/>\r\n<g>\r\n\t<path style=\"fill:#2D527C;\" d=\"M230.217,512H54.885c-14.312,0-25.956-11.644-25.956-25.956v-77.799\r\n\t\tc0-5.57,1.745-10.886,5.044-15.377l27.508-37.41c4.871-6.625,12.688-10.581,20.914-10.581h120.319\r\n\t\tc8.224,0,16.042,3.955,20.912,10.582l27.508,37.407c3.301,4.491,5.045,9.808,5.045,15.378v77.799\r\n\t\tC256.176,500.356,244.532,512,230.217,512z M56.642,484.287h171.82V408.82l-26.64-36.229H83.28L56.641,408.82L56.642,484.287\r\n\t\tL56.642,484.287L56.642,484.287z\"/>\r\n\t<path style=\"fill:#2D527C;\" d=\"M202.247,371.003H82.857c-17.894,0-32.452-14.558-32.452-32.451v-21.008\r\n\t\tc0-17.894,14.558-32.452,32.452-32.452h119.39c17.893,0,32.451,14.558,32.451,32.452v21.008\r\n\t\tC234.698,356.446,220.14,371.003,202.247,371.003z M82.857,312.806c-2.613,0-4.739,2.126-4.739,4.739v21.008\r\n\t\tc0,2.612,2.126,4.738,4.739,4.738h119.39c2.612,0,4.738-2.126,4.738-4.738v-21.008c0-2.613-2.126-4.739-4.738-4.739H82.857z\"/>\r\n\t<path style=\"fill:#2D527C;\" d=\"M132.678,455.533H42.786c-7.652,0-13.856-6.205-13.856-13.856c0-7.652,6.205-13.857,13.856-13.857\r\n\t\th89.893c7.652,0,13.856,6.205,13.856,13.857C146.535,449.328,140.329,455.533,132.678,455.533z\"/>\r\n</g>\r\n<g>\r\n</g>\r\n<g>\r\n</g>\r\n<g>\r\n</g>\r\n<g>\r\n</g>\r\n<g>\r\n</g>\r\n<g>\r\n</g>\r\n<g>\r\n</g>\r\n<g>\r\n</g>\r\n<g>\r\n</g>\r\n<g>\r\n</g>\r\n<g>\r\n</g>\r\n<g>\r\n</g>\r\n<g>\r\n</g>\r\n<g>\r\n</g>\r\n<g>\r\n</g>\r\n</svg>\r\n"
+        },
+        "module": {
+          "registry": "npm",
+          "name": "@gratico/paper",
+          "path": "src/index"
+        }
+      }],
+      "capabilities": [],
+      "templates": []
+    },
+    "main": "src/index.js",
+    "map": {
+      "./src/components/card/hover_overlay": "./src/components/card/hover_overlay/index.js",
+      "./src/components/card/overlay": "./src/components/card/overlay/index.js",
+      "./src/components/editor": "./src/components/editor/index.js",
+      "./src/components/editor/data_provider": "./src/components/editor/data_provider/index.js",
+      "./src/components/editor/footer": "./src/components/editor/footer/index.js",
+      "./src/components/editor/header": "./src/components/editor/header/index.js",
+      "./src/components/editor/inspector": "./src/components/editor/inspector/index.js",
+      "./src/components/editor/prop_type_editor": "./src/components/editor/prop_type_editor/index.js",
+      "./src/components/editor/registry": "./src/components/editor/registry/index.js",
+      "./src/components/editor/tcomb-form-templates": "./src/components/editor/tcomb-form-templates/index.js",
+      "./src/extensions": "./src/extensions/index.js",
+      "./src/extensions/prop_types/editors/style": "./src/extensions/prop_types/editors/style/index.js",
+      "./src/extensions/prop_types/types": "./src/extensions/prop_types/types/index.js",
+      "./src/helpers": "./src/helpers/index.js",
+      "./src/helpers/bodhi/src": "./src/helpers/bodhi/src/index.js",
+      "./src/objects": "./src/objects/index.js",
+      "./src/public": "./src/public/index.js",
+      "./src/stylesheets": "./src/stylesheets/index.js"
+    }
+  },
+  "asap@2.0.6": {
+    "version": "2.0.6",
+    "dependencies": {},
+    "browser": {
+      "./asap": "./browser-asap.js",
+      "./asap.js": "./browser-asap.js",
+      "./raw": "./browser-raw.js",
+      "./raw.js": "./browser-raw.js",
+      "./test/domain.js": "./test/browser-domain.js"
+    },
+    "main": "./asap.js",
+    "map": {}
+  },
+  "asn1.js@4.9.2": {
+    "version": "4.9.2",
+    "dependencies": {
+      "bn.js": "4.11.8",
+      "inherits": "2.0.3",
+      "minimalistic-assert": "1.0.0"
+    },
+    "main": "lib/asn1.js",
+    "map": {
+      "./lib/asn1/base": "./lib/asn1/base/index.js",
+      "./lib/asn1/constants": "./lib/asn1/constants/index.js",
+      "./lib/asn1/decoders": "./lib/asn1/decoders/index.js",
+      "./lib/asn1/encoders": "./lib/asn1/encoders/index.js"
+    }
+  },
+  "babel-runtime@6.26.0": {
+    "version": "6.26.0",
+    "dependencies": {
+      "core-js": "2.5.3",
+      "regenerator-runtime": "0.11.1"
+    },
+    "main": "index.js",
+    "map": {}
+  },
+  "core-js@2.5.3": {
+    "version": "2.5.3",
+    "dependencies": {},
+    "main": "index.js",
+    "map": {
+      "./fn/array": "./fn/array/index.js",
+      "./fn/array/virtual": "./fn/array/virtual/index.js",
+      "./fn/date": "./fn/date/index.js",
+      "./fn/dom-collections": "./fn/dom-collections/index.js",
+      "./fn/error": "./fn/error/index.js",
+      "./fn/function": "./fn/function/index.js",
+      "./fn/function/virtual": "./fn/function/virtual/index.js",
+      "./fn/json": "./fn/json/index.js",
+      "./fn/map": "./fn/map/index.js",
+      "./fn/math": "./fn/math/index.js",
+      "./fn/number": "./fn/number/index.js",
+      "./fn/number/virtual": "./fn/number/virtual/index.js",
+      "./fn/object": "./fn/object/index.js",
+      "./fn/promise": "./fn/promise/index.js",
+      "./fn/reflect": "./fn/reflect/index.js",
+      "./fn/regexp": "./fn/regexp/index.js",
+      "./fn/set": "./fn/set/index.js",
+      "./fn/string": "./fn/string/index.js",
+      "./fn/string/virtual": "./fn/string/virtual/index.js",
+      "./fn/symbol": "./fn/symbol/index.js",
+      "./fn/system": "./fn/system/index.js",
+      "./fn/typed": "./fn/typed/index.js",
+      "./fn/weak-map": "./fn/weak-map/index.js",
+      "./fn/weak-set": "./fn/weak-set/index.js",
+      "./library/core": "./library/core/index.js",
+      "./library/es5": "./library/es5/index.js",
+      "./library/es6": "./library/es6/index.js",
+      "./library/es7": "./library/es7/index.js",
+      "./library/fn/array": "./library/fn/array/index.js",
+      "./library/fn/array/virtual": "./library/fn/array/virtual/index.js",
+      "./library/fn/date": "./library/fn/date/index.js",
+      "./library/fn/dom-collections": "./library/fn/dom-collections/index.js",
+      "./library/fn/error": "./library/fn/error/index.js",
+      "./library/fn/function": "./library/fn/function/index.js",
+      "./library/fn/function/virtual": "./library/fn/function/virtual/index.js",
+      "./library/fn/json": "./library/fn/json/index.js",
+      "./library/fn/map": "./library/fn/map/index.js",
+      "./library/fn/math": "./library/fn/math/index.js",
+      "./library/fn/number": "./library/fn/number/index.js",
+      "./library/fn/number/virtual": "./library/fn/number/virtual/index.js",
+      "./library/fn/object": "./library/fn/object/index.js",
+      "./library/fn/promise": "./library/fn/promise/index.js",
+      "./library/fn/reflect": "./library/fn/reflect/index.js",
+      "./library/fn/regexp": "./library/fn/regexp/index.js",
+      "./library/fn/set": "./library/fn/set/index.js",
+      "./library/fn/string": "./library/fn/string/index.js",
+      "./library/fn/string/virtual": "./library/fn/string/virtual/index.js",
+      "./library/fn/symbol": "./library/fn/symbol/index.js",
+      "./library/fn/system": "./library/fn/system/index.js",
+      "./library/fn/typed": "./library/fn/typed/index.js",
+      "./library/fn/weak-map": "./library/fn/weak-map/index.js",
+      "./library/fn/weak-set": "./library/fn/weak-set/index.js",
+      "./library/stage": "./library/stage/index.js",
+      "./library/web": "./library/web/index.js"
+    }
+  },
+  "base64-js@1.2.1": {
+    "version": "1.2.1",
+    "dependencies": {},
+    "main": "index.js",
+    "map": {}
+  },
+  "bn.js@4.11.8": {
+    "version": "4.11.8",
+    "dependencies": {},
+    "browser": {
+      "buffer": false
+    },
+    "main": "lib/bn.js",
+    "map": {}
+  },
+  "brorand@1.1.0": {
+    "version": "1.1.0",
+    "dependencies": {},
+    "browser": {
+      "crypto": false
+    },
+    "main": "index.js",
+    "map": {}
+  },
+  "browserify-aes@1.1.1": {
+    "version": "1.1.1",
+    "dependencies": {
+      "buffer-xor": "1.0.3",
+      "cipher-base": "1.0.4",
+      "create-hash": "1.1.3",
+      "evp_bytestokey": "1.0.3",
+      "inherits": "2.0.3",
+      "safe-buffer": "5.1.1"
+    },
+    "browser": "browser.js",
+    "main": "index.js",
+    "map": {}
+  },
+  "browserify-cipher@1.0.0": {
+    "version": "1.0.0",
+    "dependencies": {
+      "browserify-aes": "1.1.1",
+      "browserify-des": "1.0.0",
+      "evp_bytestokey": "1.0.3"
+    },
+    "browser": "browser.js",
+    "main": "index.js",
+    "map": {}
+  },
+  "browserify-des@1.0.0": {
+    "version": "1.0.0",
+    "dependencies": {
+      "cipher-base": "1.0.4",
+      "des.js": "1.0.0",
+      "inherits": "2.0.3"
+    },
+    "main": "index.js",
+    "map": {}
+  },
+  "browserify-rsa@4.0.1": {
+    "version": "4.0.1",
+    "dependencies": {
+      "bn.js": "4.11.8",
+      "randombytes": "2.0.5"
+    },
+    "main": "index.js",
+    "map": {}
+  },
+  "browserify-sign@4.0.4": {
+    "version": "4.0.4",
+    "dependencies": {
+      "bn.js": "4.11.8",
+      "browserify-rsa": "4.0.1",
+      "create-hash": "1.1.3",
+      "create-hmac": "1.1.6",
+      "elliptic": "6.4.0",
+      "inherits": "2.0.3",
+      "parse-asn1": "5.1.0"
+    },
+    "browser": "browser/index.js",
+    "main": "index.js",
+    "map": {}
+  },
+  "browserify-zlib@0.1.4": {
+    "version": "0.1.4",
+    "dependencies": {
+      "pako": "0.2.9"
+    },
+    "main": "src/index.js",
+    "map": {}
+  },
+  "buffer@5.0.8": {
+    "version": "5.0.8",
+    "dependencies": {
+      "base64-js": "1.2.1",
+      "ieee754": "1.1.8"
+    },
+    "main": "index.js",
+    "map": {}
+  },
+  "buffer-xor@1.0.3": {
+    "version": "1.0.3",
+    "dependencies": {},
+    "main": "index.js",
+    "map": {}
+  },
+  "cipher-base@1.0.4": {
+    "version": "1.0.4",
+    "dependencies": {
+      "inherits": "2.0.3",
+      "safe-buffer": "5.1.1"
+    },
+    "main": "index.js",
+    "map": {}
+  },
+  "classnames@2.2.5": {
+    "version": "2.2.5",
+    "dependencies": {},
+    "main": "index.js",
+    "map": {}
+  },
+  "codemirror@5.33.0": {
+    "version": "5.33.0",
+    "dependencies": {},
+    "main": "lib/codemirror.js",
+    "map": {}
+  },
+  "core-js@1.2.7": {
+    "version": "1.2.7",
+    "dependencies": {},
+    "main": "index.js",
+    "map": {
+      "./fn/array": "./fn/array/index.js",
+      "./fn/function": "./fn/function/index.js",
+      "./fn/html-collection": "./fn/html-collection/index.js",
+      "./fn/math": "./fn/math/index.js",
+      "./fn/node-list": "./fn/node-list/index.js",
+      "./fn/number": "./fn/number/index.js",
+      "./fn/object": "./fn/object/index.js",
+      "./fn/reflect": "./fn/reflect/index.js",
+      "./fn/regexp": "./fn/regexp/index.js",
+      "./fn/string": "./fn/string/index.js",
+      "./fn/symbol": "./fn/symbol/index.js",
+      "./library/core": "./library/core/index.js",
+      "./library/es5": "./library/es5/index.js",
+      "./library/es6": "./library/es6/index.js",
+      "./library/es7": "./library/es7/index.js",
+      "./library/fn/array": "./library/fn/array/index.js",
+      "./library/fn/function": "./library/fn/function/index.js",
+      "./library/fn/html-collection": "./library/fn/html-collection/index.js",
+      "./library/fn/math": "./library/fn/math/index.js",
+      "./library/fn/node-list": "./library/fn/node-list/index.js",
+      "./library/fn/number": "./library/fn/number/index.js",
+      "./library/fn/object": "./library/fn/object/index.js",
+      "./library/fn/reflect": "./library/fn/reflect/index.js",
+      "./library/fn/regexp": "./library/fn/regexp/index.js",
+      "./library/fn/string": "./library/fn/string/index.js",
+      "./library/fn/symbol": "./library/fn/symbol/index.js",
+      "./library/js": "./library/js/index.js",
+      "./library/web": "./library/web/index.js"
+    }
+  },
+  "core-util-is@1.0.2": {
+    "version": "1.0.2",
+    "dependencies": {},
+    "main": "lib/util.js",
+    "map": {}
+  },
+  "create-ecdh@4.0.0": {
+    "version": "4.0.0",
+    "dependencies": {
+      "bn.js": "4.11.8",
+      "elliptic": "6.4.0"
+    },
+    "browser": "browser.js",
+    "main": "index.js",
+    "map": {}
+  },
+  "create-hash@1.1.3": {
+    "version": "1.1.3",
+    "dependencies": {
+      "cipher-base": "1.0.4",
+      "inherits": "2.0.3",
+      "ripemd160": "2.0.1",
+      "sha.js": "2.4.9"
+    },
+    "browser": "browser.js",
+    "main": "index.js",
+    "map": {}
+  },
+  "create-hmac@1.1.6": {
+    "version": "1.1.6",
+    "dependencies": {
+      "cipher-base": "1.0.4",
+      "create-hash": "1.1.3",
+      "inherits": "2.0.3",
+      "ripemd160": "2.0.1",
+      "safe-buffer": "5.1.1",
+      "sha.js": "2.4.9"
+    },
+    "browser": "./browser.js",
+    "main": "index.js",
+    "map": {}
+  },
+  "create-react-class@15.6.2": {
+    "version": "15.6.2",
+    "dependencies": {
+      "fbjs": "0.8.16",
+      "loose-envify": "1.3.1",
+      "object-assign": "4.1.1"
+    },
+    "main": "index.js",
+    "map": {}
+  },
+  "crypto-browserify@3.12.0": {
+    "version": "3.12.0",
+    "dependencies": {
+      "browserify-cipher": "1.0.0",
+      "browserify-sign": "4.0.4",
+      "create-ecdh": "4.0.0",
+      "create-hash": "1.1.3",
+      "create-hmac": "1.1.6",
+      "diffie-hellman": "5.0.2",
+      "inherits": "2.0.3",
+      "pbkdf2": "3.0.14",
+      "public-encrypt": "4.0.0",
+      "randombytes": "2.0.5",
+      "randomfill": "1.0.3"
+    },
+    "browser": {
+      "crypto": false
+    },
+    "main": "index.js",
+    "map": {}
+  },
+  "css-vendor@0.3.8": {
+    "version": "0.3.8",
+    "dependencies": {
+      "is-in-browser": "1.1.3"
+    },
+    "main": "./lib/index",
+    "map": {}
+  },
+  "d3-array@1.2.1": {
+    "version": "1.2.1",
+    "dependencies": {},
+    "main": "build/d3-array.js",
+    "map": {}
+  },
+  "d3-collection@1.0.4": {
+    "version": "1.0.4",
+    "dependencies": {},
+    "main": "build/d3-collection.js",
+    "map": {}
+  },
+  "d3-color@1.0.3": {
+    "version": "1.0.3",
+    "dependencies": {},
+    "main": "build/d3-color.js",
+    "map": {}
+  },
+  "d3-ease@1.0.3": {
+    "version": "1.0.3",
+    "dependencies": {},
+    "main": "build/d3-ease.js",
+    "map": {}
+  },
+  "d3-format@1.2.1": {
+    "version": "1.2.1",
+    "dependencies": {},
+    "main": "build/d3-format.js",
+    "map": {}
+  },
+  "d3-interpolate@1.1.6": {
+    "version": "1.1.6",
+    "dependencies": {
+      "d3-color": "1.0.3"
+    },
+    "main": "build/d3-interpolate.js",
+    "map": {
+      "./src/transform": "./src/transform/index.js"
+    }
+  },
+  "d3-path@1.0.5": {
+    "version": "1.0.5",
+    "dependencies": {},
+    "main": "build/d3-path.js",
+    "map": {}
+  },
+  "d3-scale@1.0.7": {
+    "version": "1.0.7",
+    "dependencies": {
+      "d3-array": "1.2.1",
+      "d3-collection": "1.0.4",
+      "d3-color": "1.0.3",
+      "d3-format": "1.2.1",
+      "d3-interpolate": "1.1.6",
+      "d3-time": "1.0.8",
+      "d3-time-format": "2.1.1"
+    },
+    "main": "build/d3-scale.js",
+    "map": {}
+  },
+  "d3-shape@1.2.0": {
+    "version": "1.2.0",
+    "dependencies": {
+      "d3-path": "1.0.5"
+    },
+    "main": "build/d3-shape.js",
+    "map": {
+      "./src/link": "./src/link/index.js"
+    }
+  },
+  "d3-time@1.0.8": {
+    "version": "1.0.8",
+    "dependencies": {},
+    "main": "build/d3-time.js",
+    "map": {}
+  },
+  "d3-time-format@2.1.1": {
+    "version": "2.1.1",
+    "dependencies": {
+      "d3-time": "1.0.8"
+    },
+    "main": "build/d3-time-format.js",
+    "map": {}
+  },
+  "d3-timer@1.0.7": {
+    "version": "1.0.7",
+    "dependencies": {},
+    "main": "build/d3-timer.js",
+    "map": {}
+  },
+  "d3-voronoi@1.1.2": {
+    "version": "1.1.2",
+    "dependencies": {},
+    "main": "build/d3-voronoi.js",
+    "map": {}
+  },
+  "debug@2.6.9": {
+    "version": "2.6.9",
+    "dependencies": {
+      "ms": "2.0.0"
+    },
+    "browser": "./src/browser.js",
+    "main": "./src/index.js",
+    "map": {}
+  },
+  "des.js@1.0.0": {
+    "version": "1.0.0",
+    "dependencies": {
+      "inherits": "2.0.3",
+      "minimalistic-assert": "1.0.0"
+    },
+    "main": "lib/des.js",
+    "map": {}
+  },
+  "diffie-hellman@5.0.2": {
+    "version": "5.0.2",
+    "dependencies": {
+      "bn.js": "4.11.8",
+      "miller-rabin": "4.0.1",
+      "randombytes": "2.0.5"
+    },
+    "browser": "browser.js",
+    "main": "index.js",
+    "map": {}
+  },
+  "doctrine@0.7.2": {
+    "version": "0.7.2",
+    "dependencies": {
+      "esutils": "1.1.6",
+      "isarray": "0.0.1"
+    },
+    "main": "lib/doctrine.js",
+    "map": {}
+  },
+  "dom-helpers@3.3.1": {
+    "version": "3.3.1",
+    "dependencies": {},
+    "main": "index.js",
+    "map": {}
+  },
+  "domain-browser@1.1.7": {
+    "version": "1.1.7",
+    "dependencies": {},
+    "main": "./index.js",
+    "map": {}
+  },
+  "elliptic@6.4.0": {
+    "version": "6.4.0",
+    "dependencies": {
+      "bn.js": "4.11.8",
+      "brorand": "1.1.0",
+      "hash.js": "1.1.3",
+      "hmac-drbg": "1.0.1",
+      "inherits": "2.0.3",
+      "minimalistic-assert": "1.0.0",
+      "minimalistic-crypto-utils": "1.0.1"
+    },
+    "main": "lib/elliptic.js",
+    "map": {
+      "./lib/elliptic/curve": "./lib/elliptic/curve/index.js",
+      "./lib/elliptic/ec": "./lib/elliptic/ec/index.js",
+      "./lib/elliptic/eddsa": "./lib/elliptic/eddsa/index.js"
+    }
+  },
+  "encoding@0.1.12": {
+    "version": "0.1.12",
+    "dependencies": {
+      "iconv-lite": "0.4.19"
+    },
+    "main": "lib/encoding.js",
+    "map": {}
+  },
+  "esutils@1.1.6": {
+    "version": "1.1.6",
+    "dependencies": {},
+    "main": "lib/utils.js",
+    "map": {}
+  },
+  "eventemitter3@1.2.0": {
+    "version": "1.2.0",
+    "dependencies": {},
+    "main": "index.js",
+    "map": {}
+  },
+  "evp_bytestokey@1.0.3": {
+    "version": "1.0.3",
+    "dependencies": {
+      "md5.js": "1.3.4",
+      "safe-buffer": "5.1.1"
+    },
+    "main": "index.js",
+    "map": {}
+  },
+  "fbjs@0.8.16": {
+    "version": "0.8.16",
+    "dependencies": {
+      "core-js": "1.2.7",
+      "isomorphic-fetch": "2.2.1",
+      "loose-envify": "1.3.1",
+      "object-assign": "4.1.1",
+      "promise": "7.3.1",
+      "setimmediate": "1.0.5",
+      "ua-parser-js": "0.7.17"
+    },
+    "main": "index.js",
+    "map": {}
+  },
+  "get-comments@1.0.1": {
+    "version": "1.0.1",
+    "dependencies": {},
+    "main": "index.js",
+    "map": {}
+  },
+  "hash-base@2.0.2": {
+    "version": "2.0.2",
+    "dependencies": {
+      "inherits": "2.0.3"
+    },
+    "main": "index.js",
+    "map": {}
+  },
+  "hash.js@1.1.3": {
+    "version": "1.1.3",
+    "dependencies": {
+      "inherits": "2.0.3",
+      "minimalistic-assert": "1.0.0"
+    },
+    "main": "lib/hash.js",
+    "map": {}
+  },
+  "hmac-drbg@1.0.1": {
+    "version": "1.0.1",
+    "dependencies": {
+      "hash.js": "1.1.3",
+      "minimalistic-assert": "1.0.0",
+      "minimalistic-crypto-utils": "1.0.1"
+    },
+    "main": "lib/hmac-drbg.js",
+    "map": {}
+  },
+  "iconv-lite@0.4.19": {
+    "version": "0.4.19",
+    "dependencies": {},
+    "browser": {
+      "./extend-node": false,
+      "./streams": false
+    },
+    "main": "./lib/index.js",
+    "map": {}
+  },
+  "ieee754@1.1.8": {
+    "version": "1.1.8",
+    "dependencies": {},
+    "main": "index.js",
+    "map": {}
+  },
+  "immstruct@2.0.0": {
+    "version": "2.0.0",
+    "dependencies": {
+      "eventemitter3": "1.2.0",
+      "immutable": "3.8.2"
+    },
+    "main": "index.js",
+    "map": {}
+  },
+  "immutable@3.8.2": {
+    "version": "3.8.2",
+    "dependencies": {},
+    "main": "dist/immutable.js",
+    "map": {
+      "./contrib/cursor": "./contrib/cursor/index.js"
+    }
+  },
+  "inherits@2.0.3": {
+    "version": "2.0.3",
+    "dependencies": {},
+    "browser": "./inherits_browser.js",
+    "main": "./inherits.js",
+    "map": {}
+  },
+  "is-dom@1.0.9": {
+    "version": "1.0.9",
+    "dependencies": {},
+    "main": "index.js",
+    "map": {}
+  },
+  "is-in-browser@1.1.3": {
+    "version": "1.1.3",
+    "dependencies": {},
+    "main": "dist/index.js",
+    "map": {}
+  },
+  "is-stream@1.1.0": {
+    "version": "1.1.0",
+    "dependencies": {},
+    "main": "index.js",
+    "map": {}
+  },
+  "isarray@0.0.1": {
+    "version": "0.0.1",
+    "dependencies": {},
+    "main": "index.js",
+    "map": {}
+  },
+  "isomorphic-fetch@2.2.1": {
+    "version": "2.2.1",
+    "dependencies": {
+      "node-fetch": "1.7.3",
+      "whatwg-fetch": "2.0.3"
+    },
+    "browser": "fetch-npm-browserify.js",
+    "main": "fetch-npm-node.js",
+    "map": {}
+  },
+  "js-tokens@3.0.2": {
+    "version": "3.0.2",
+    "dependencies": {},
+    "main": "index.js",
+    "map": {}
+  },
+  "jspm-nodelibs-assert@0.2.1": {
+    "version": "0.2.1",
+    "dependencies": {},
+    "main": "assert.js",
+    "map": {
+      "./assert.js": {
+        "node": "@node/assert"
+      }
+    }
+  },
+  "jspm-nodelibs-buffer@0.2.3": {
+    "version": "0.2.3",
+    "dependencies": {
+      "buffer": "5.0.8"
+    },
+    "main": "buffer.js",
+    "map": {
+      "./buffer.js": {
+        "node": "@node/buffer",
+        "browser": "buffer"
+      }
+    }
+  },
+  "jspm-nodelibs-child_process@0.2.1": {
+    "version": "0.2.1",
+    "dependencies": {},
+    "main": "./child_process.js",
+    "map": {
+      "./child_process.js": {
+        "node": "@node/child_process"
+      }
+    }
+  },
+  "jspm-nodelibs-cluster@0.2.1": {
+    "version": "0.2.1",
+    "dependencies": {},
+    "main": "./cluster.js",
+    "map": {
+      "./cluster.js": {
+        "node": "@node/cluster"
+      }
+    }
+  },
+  "jspm-nodelibs-console@0.2.3": {
+    "version": "0.2.3",
+    "dependencies": {},
+    "main": "./console.js",
+    "map": {
+      "./console.js": {
+        "node": "@node/console"
+      }
+    }
+  },
+  "jspm-nodelibs-constants@0.2.1": {
+    "version": "0.2.1",
+    "dependencies": {},
+    "main": "constants.js",
+    "map": {
+      "./constants.js": {
+        "node": "@node/constants"
+      }
+    }
+  },
+  "jspm-nodelibs-crypto@0.2.1": {
+    "version": "0.2.1",
+    "dependencies": {
+      "crypto-browserify": "3.12.0"
+    },
+    "main": "./crypto.js",
+    "map": {
+      "./crypto.js": {
+        "node": "@node/crypto",
+        "browser": "crypto-browserify"
+      }
+    }
+  },
+  "jspm-nodelibs-dgram@0.2.1": {
+    "version": "0.2.1",
+    "dependencies": {},
+    "main": "./dgram.js",
+    "map": {
+      "./dgram.js": {
+        "node": "@node/dgram"
+      }
+    }
+  },
+  "jspm-nodelibs-dns@0.2.1": {
+    "version": "0.2.1",
+    "dependencies": {},
+    "main": "./dns.js",
+    "map": {
+      "./dns.js": {
+        "node": "@node/dns"
+      }
+    }
+  },
+  "jspm-nodelibs-domain@0.2.1": {
+    "version": "0.2.1",
+    "dependencies": {
+      "domain-browser": "1.1.7"
+    },
+    "main": "./domain.js",
+    "map": {
+      "./domain.js": {
+        "node": "@node/domain",
+        "browser": "domain-browser"
+      }
+    }
+  },
+  "jspm-nodelibs-events@0.2.2": {
+    "version": "0.2.2",
+    "dependencies": {},
+    "main": "./events.js",
+    "map": {
+      "./events.js": {
+        "node": "@node/events"
+      }
+    }
+  },
+  "jspm-nodelibs-fs@0.2.1": {
+    "version": "0.2.1",
+    "dependencies": {},
+    "main": "./fs.js",
+    "map": {
+      "./fs.js": {
+        "node": "@node/fs"
+      }
+    }
+  },
+  "jspm-nodelibs-https@0.2.2": {
+    "version": "0.2.2",
+    "dependencies": {},
+    "main": "./https.js",
+    "map": {
+      "./https.js": {
+        "node": "@node/https"
+      }
+    }
+  },
+  "jspm-nodelibs-module@0.2.1": {
+    "version": "0.2.1",
+    "dependencies": {},
+    "main": "./module.js",
+    "map": {
+      "./module.js": {
+        "node": "@node/module",
+        "browser": "@empty"
+      }
+    }
+  },
+  "jspm-nodelibs-net@0.2.1": {
+    "version": "0.2.1",
+    "dependencies": {},
+    "main": "./net.js",
+    "map": {
+      "./net.js": {
+        "node": "@node/net"
+      }
+    }
+  },
+  "jspm-nodelibs-os@0.2.2": {
+    "version": "0.2.2",
+    "dependencies": {
+      "os-browserify": "0.3.0"
+    },
+    "main": "./os.js",
+    "map": {
+      "./os.js": {
+        "node": "@node/os",
+        "browser": "os-browserify"
+      }
+    }
+  },
+  "jspm-nodelibs-path@0.2.3": {
+    "version": "0.2.3",
+    "dependencies": {},
+    "main": "./path.js",
+    "map": {
+      "./path.js": {
+        "node": "@node/path"
+      }
+    }
+  },
+  "jspm-nodelibs-process@0.2.1": {
+    "version": "0.2.1",
+    "dependencies": {},
+    "main": "./process.js",
+    "map": {
+      "./process.js": {
+        "node": "./process-node.js"
+      }
+    }
+  },
+  "jspm-nodelibs-punycode@0.2.1": {
+    "version": "0.2.1",
+    "dependencies": {
+      "punycode": "1.4.1"
+    },
+    "main": "./punycode.js",
+    "map": {
+      "./punycode.js": {
+        "node": "@node/punycode",
+        "browser": "punycode"
+      }
+    }
+  },
+  "jspm-nodelibs-querystring@0.2.2": {
+    "version": "0.2.2",
+    "dependencies": {},
+    "main": "./querystring.js",
+    "map": {
+      "./querystring.js": {
+        "node": "@node/querystring"
+      }
+    }
+  },
+  "jspm-nodelibs-readline@0.2.1": {
+    "version": "0.2.1",
+    "dependencies": {},
+    "main": "./readline.js",
+    "map": {
+      "./readline.js": {
+        "node": "@node/readline"
+      }
+    }
+  },
+  "jspm-nodelibs-repl@0.2.1": {
+    "version": "0.2.1",
+    "dependencies": {},
+    "main": "./repl.js",
+    "map": {
+      "./repl.js": {
+        "node": "@node/repl"
+      }
+    }
+  },
+  "jspm-nodelibs-stream@0.2.1": {
+    "version": "0.2.1",
+    "dependencies": {
+      "stream-browserify": "2.0.1"
+    },
+    "main": "./stream.js",
+    "map": {
+      "./stream.js": {
+        "node": "@node/stream",
+        "browser": "stream-browserify"
+      }
+    }
+  },
+  "jspm-nodelibs-string_decoder@0.2.2": {
+    "version": "0.2.2",
+    "dependencies": {
+      "string_decoder": "0.10.31"
+    },
+    "main": "./string_decoder.js",
+    "map": {
+      "./string_decoder.js": {
+        "node": "@node/string_decoder",
+        "browser": "string_decoder"
+      }
+    }
+  },
+  "string_decoder@0.10.31": {
+    "version": "0.10.31",
+    "dependencies": {},
+    "main": "index.js",
+    "map": {}
+  },
+  "jspm-nodelibs-timers@0.2.1": {
+    "version": "0.2.1",
+    "dependencies": {
+      "timers-browserify": "1.4.2"
+    },
+    "main": "./timers.js",
+    "map": {
+      "./timers.js": {
+        "node": "@node/timers",
+        "browser": "timers-browserify"
+      }
+    }
+  },
+  "jspm-nodelibs-tls@0.2.1": {
+    "version": "0.2.1",
+    "dependencies": {},
+    "main": "./tls.js",
+    "map": {
+      "./tls.js": {
+        "node": "@node/tls"
+      }
+    }
+  },
+  "jspm-nodelibs-tty@0.2.1": {
+    "version": "0.2.1",
+    "dependencies": {},
+    "main": "./tty.js",
+    "map": {
+      "./tty.js": {
+        "node": "@node/tty"
+      }
+    }
+  },
+  "jspm-nodelibs-url@0.2.1": {
+    "version": "0.2.1",
+    "dependencies": {
+      "url": "0.11.0"
+    },
+    "main": "./url.js",
+    "map": {
+      "./url.js": {
+        "node": "@node/url",
+        "browser": "url"
+      }
+    }
+  },
+  "jspm-nodelibs-util@0.2.2": {
+    "version": "0.2.2",
+    "dependencies": {},
+    "main": "./util.js",
+    "map": {
+      "./isBuffer.js": {
+        "~node": "./isBufferBrowser.js"
+      },
+      "./util.js": {
+        "node": "@node/util"
+      }
+    }
+  },
+  "jspm-nodelibs-vm@0.2.1": {
+    "version": "0.2.1",
+    "dependencies": {},
+    "main": "./vm.js",
+    "map": {
+      "./vm.js": {
+        "node": "@node/vm"
+      }
+    }
+  },
+  "jspm-nodelibs-zlib@0.2.3": {
+    "version": "0.2.3",
+    "dependencies": {
+      "browserify-zlib": "0.1.4"
+    },
+    "main": "./zlib.js",
+    "map": {
+      "./zlib.js": {
+        "node": "@node/zlib",
+        "browser": "browserify-zlib"
+      }
+    }
+  },
+  "keese@1.1.1": {
+    "version": "1.1.1",
+    "dependencies": {},
+    "main": "index.js",
+    "map": {}
+  },
+  "lodash@4.17.4": {
+    "version": "4.17.4",
+    "dependencies": {},
+    "main": "lodash.js",
+    "map": {}
+  },
+  "lodash._getnative@3.9.1": {
+    "version": "3.9.1",
+    "dependencies": {},
+    "main": "index.js",
+    "map": {}
+  },
+  "lodash.debounce@4.0.8": {
+    "version": "4.0.8",
+    "dependencies": {},
+    "main": "index.js",
+    "map": {}
+  },
+  "lodash.isequal@4.5.0": {
+    "version": "4.5.0",
+    "dependencies": {},
+    "main": "index.js",
+    "map": {}
+  },
+  "lodash.throttle@3.0.4": {
+    "version": "3.0.4",
+    "dependencies": {
+      "lodash.debounce": "3.1.1"
+    },
+    "main": "index.js",
+    "map": {}
+  },
+  "lodash.debounce@3.1.1": {
+    "version": "3.1.1",
+    "dependencies": {
+      "lodash._getnative": "3.9.1"
+    },
+    "main": "index.js",
+    "map": {}
+  },
+  "loose-envify@1.3.1": {
+    "version": "1.3.1",
+    "dependencies": {
+      "js-tokens": "3.0.2"
+    },
+    "main": "index.js",
+    "map": {}
+  },
+  "material-colors@1.2.5": {
+    "version": "1.2.5",
+    "dependencies": {},
+    "main": "dist/colors.js",
+    "map": {}
+  },
+  "md5.js@1.3.4": {
+    "version": "1.3.4",
+    "dependencies": {
+      "hash-base": "3.0.4",
+      "inherits": "2.0.3"
+    },
+    "main": "index.js",
+    "map": {}
+  },
+  "hash-base@3.0.4": {
+    "version": "3.0.4",
+    "dependencies": {
+      "inherits": "2.0.3",
+      "safe-buffer": "5.1.1"
+    },
+    "main": "index.js",
+    "map": {}
+  },
+  "miller-rabin@4.0.1": {
+    "version": "4.0.1",
+    "dependencies": {
+      "bn.js": "4.11.8",
+      "brorand": "1.1.0"
+    },
+    "main": "lib/mr.js",
+    "map": {}
+  },
+  "minimalistic-assert@1.0.0": {
+    "version": "1.0.0",
+    "dependencies": {},
+    "main": "index.js",
+    "map": {}
+  },
+  "minimalistic-crypto-utils@1.0.1": {
+    "version": "1.0.1",
+    "dependencies": {},
+    "main": "lib/utils.js",
+    "map": {}
+  },
+  "ms@2.0.0": {
+    "version": "2.0.0",
+    "dependencies": {},
+    "main": "./index",
+    "map": {}
+  },
+  "node-fetch@1.7.3": {
+    "version": "1.7.3",
+    "dependencies": {
+      "encoding": "0.1.12",
+      "is-stream": "1.1.0"
+    },
+    "main": "index.js",
+    "map": {}
+  },
+  "node-uuid@1.4.8": {
+    "version": "1.4.8",
+    "dependencies": {},
+    "main": "./uuid.js",
+    "map": {}
+  },
+  "object-assign@4.1.1": {
+    "version": "4.1.1",
+    "dependencies": {},
+    "main": "index.js",
+    "map": {}
+  },
+  "object-path@0.9.2": {
+    "version": "0.9.2",
+    "dependencies": {},
+    "main": "index.js",
+    "map": {}
+  },
+  "os-browserify@0.3.0": {
+    "version": "0.3.0",
+    "dependencies": {},
+    "browser": "browser.js",
+    "main": "main.js",
+    "map": {}
+  },
+  "pako@0.2.9": {
+    "version": "0.2.9",
+    "dependencies": {},
+    "main": "index.js",
+    "map": {}
+  },
+  "parse-asn1@5.1.0": {
+    "version": "5.1.0",
+    "dependencies": {
+      "asn1.js": "4.9.2",
+      "browserify-aes": "1.1.1",
+      "create-hash": "1.1.3",
+      "evp_bytestokey": "1.0.3",
+      "pbkdf2": "3.0.14"
+    },
+    "main": "index.js",
+    "map": {}
+  },
+  "pbkdf2@3.0.14": {
+    "version": "3.0.14",
+    "dependencies": {
+      "create-hash": "1.1.3",
+      "create-hmac": "1.1.6",
+      "ripemd160": "2.0.1",
+      "safe-buffer": "5.1.1",
+      "sha.js": "2.4.9"
+    },
+    "browser": {
+      "./index.js": "./browser.js",
+      "./lib/sync.js": "./lib/sync-browser.js"
+    },
+    "main": "index.js",
+    "map": {}
+  },
+  "performance-now@0.2.0": {
+    "version": "0.2.0",
+    "dependencies": {},
+    "main": "lib/performance-now.js",
+    "map": {}
+  },
+  "process@0.11.10": {
+    "version": "0.11.10",
+    "dependencies": {},
+    "browser": "./browser.js",
+    "main": "./index.js",
+    "map": {}
+  },
+  "process-nextick-args@1.0.7": {
+    "version": "1.0.7",
+    "dependencies": {},
+    "main": "index.js",
+    "map": {}
+  },
+  "promise@7.3.1": {
+    "version": "7.3.1",
+    "dependencies": {
+      "asap": "2.0.6"
+    },
+    "main": "index.js",
+    "map": {}
+  },
+  "prop-types@15.6.0": {
+    "version": "15.6.0",
+    "dependencies": {
+      "fbjs": "0.8.16",
+      "loose-envify": "1.3.1",
+      "object-assign": "4.1.1"
+    },
+    "main": "index.js",
+    "map": {}
+  },
+  "public-encrypt@4.0.0": {
+    "version": "4.0.0",
+    "dependencies": {
+      "bn.js": "4.11.8",
+      "browserify-rsa": "4.0.1",
+      "create-hash": "1.1.3",
+      "parse-asn1": "5.1.0",
+      "randombytes": "2.0.5"
+    },
+    "browser": "browser.js",
+    "main": "index.js",
+    "map": {}
+  },
+  "punycode@1.4.1": {
+    "version": "1.4.1",
+    "dependencies": {},
+    "main": "punycode.js",
+    "map": {}
+  },
+  "querystring@0.2.0": {
+    "version": "0.2.0",
+    "dependencies": {},
+    "main": "index.js",
+    "map": {}
+  },
+  "raf@3.4.0": {
+    "version": "3.4.0",
+    "dependencies": {
+      "performance-now": "2.1.0"
+    },
+    "main": "index.js",
+    "map": {}
+  },
+  "performance-now@2.1.0": {
+    "version": "2.1.0",
+    "dependencies": {},
+    "main": "lib/performance-now.js",
+    "map": {}
+  },
+  "randombytes@2.0.5": {
+    "version": "2.0.5",
+    "dependencies": {
+      "safe-buffer": "5.1.1"
+    },
+    "browser": "browser.js",
+    "main": "index.js",
+    "map": {}
+  },
+  "randomfill@1.0.3": {
+    "version": "1.0.3",
+    "dependencies": {
+      "randombytes": "2.0.5",
+      "safe-buffer": "5.1.1"
+    },
+    "browser": "browser.js",
+    "main": "index.js",
+    "map": {}
+  },
+  "react@15.5.4": {
+    "version": "15.5.4",
+    "dependencies": {
+      "fbjs": "0.8.16",
+      "loose-envify": "1.3.1",
+      "object-assign": "4.1.1",
+      "prop-types": "15.6.0"
+    },
+    "main": "react.js",
+    "map": {}
+  },
+  "react-codemirror@1.0.0": {
+    "version": "1.0.0",
+    "dependencies": {
+      "classnames": "2.2.5",
+      "codemirror": "5.33.0",
+      "create-react-class": "15.6.2",
+      "lodash.debounce": "4.0.8",
+      "lodash.isequal": "4.5.0",
+      "prop-types": "15.6.0"
+    },
+    "main": "lib/Codemirror.js",
+    "map": {}
+  },
+  "react-color@2.13.8": {
+    "version": "2.13.8",
+    "dependencies": {
+      "lodash": "4.17.4",
+      "material-colors": "1.2.5",
+      "prop-types": "15.6.0",
+      "reactcss": "1.2.3",
+      "tinycolor2": "1.4.1"
+    },
+    "main": "lib/index.js",
+    "map": {
+      "./lib/components/common": "./lib/components/common/index.js"
+    }
+  },
+  "react-dom@15.5.4": {
+    "version": "15.5.4",
+    "dependencies": {
+      "fbjs": "0.8.16",
+      "loose-envify": "1.3.1",
+      "object-assign": "4.1.1",
+      "prop-types": "15.5.10"
+    },
+    "main": "index.js",
+    "map": {}
+  },
+  "prop-types@15.5.10": {
+    "version": "15.5.10",
+    "dependencies": {
+      "fbjs": "0.8.16",
+      "loose-envify": "1.3.1"
+    },
+    "main": "index.js",
+    "map": {}
+  },
+  "react-dom-factories@1.0.2": {
+    "version": "1.0.2",
+    "dependencies": {},
+    "main": "index.js",
+    "map": {}
+  },
+  "react-inspector@2.2.2": {
+    "version": "2.2.2",
+    "dependencies": {
+      "babel-runtime": "6.26.0",
+      "is-dom": "1.0.9"
+    },
+    "main": "lib/index.js",
+    "map": {
+      "./lib/styles/themes": "./lib/styles/themes/index.js"
+    }
+  },
+  "react-motion@0.4.8": {
+    "version": "0.4.8",
+    "dependencies": {
+      "create-react-class": "15.6.2",
+      "performance-now": "0.2.0",
+      "prop-types": "15.6.0",
+      "raf": "3.4.0"
+    },
+    "main": "lib/react-motion.js",
+    "map": {}
+  },
+  "react-popover@0.4.18": {
+    "version": "0.4.18",
+    "dependencies": {
+      "create-react-class": "15.6.2",
+      "css-vendor": "0.3.8",
+      "debug": "2.6.9",
+      "lodash.throttle": "3.0.4",
+      "prop-types": "15.6.0",
+      "react-dom-factories": "1.0.2"
+    },
+    "main": "build/index.js",
+    "map": {}
+  },
+  "react-virtualized@8.11.4": {
+    "version": "8.11.4",
+    "dependencies": {
+      "babel-runtime": "6.26.0",
+      "classnames": "2.2.5",
+      "dom-helpers": "3.3.1",
+      "loose-envify": "1.3.1"
+    },
+    "main": "dist/commonjs/index.js",
+    "map": {
+      "./dist/commonjs": "./dist/commonjs/index.js",
+      "./dist/commonjs/ArrowKeyStepper": "./dist/commonjs/ArrowKeyStepper/index.js",
+      "./dist/commonjs/AutoSizer": "./dist/commonjs/AutoSizer/index.js",
+      "./dist/commonjs/CellMeasurer": "./dist/commonjs/CellMeasurer/index.js",
+      "./dist/commonjs/Collection": "./dist/commonjs/Collection/index.js",
+      "./dist/commonjs/ColumnSizer": "./dist/commonjs/ColumnSizer/index.js",
+      "./dist/commonjs/Grid": "./dist/commonjs/Grid/index.js",
+      "./dist/commonjs/InfiniteLoader": "./dist/commonjs/InfiniteLoader/index.js",
+      "./dist/commonjs/List": "./dist/commonjs/List/index.js",
+      "./dist/commonjs/MultiGrid": "./dist/commonjs/MultiGrid/index.js",
+      "./dist/commonjs/ScrollSync": "./dist/commonjs/ScrollSync/index.js",
+      "./dist/commonjs/Table": "./dist/commonjs/Table/index.js",
+      "./dist/commonjs/WindowScroller": "./dist/commonjs/WindowScroller/index.js",
+      "./dist/es": "./dist/es/index.js",
+      "./dist/es/ArrowKeyStepper": "./dist/es/ArrowKeyStepper/index.js",
+      "./dist/es/AutoSizer": "./dist/es/AutoSizer/index.js",
+      "./dist/es/CellMeasurer": "./dist/es/CellMeasurer/index.js",
+      "./dist/es/Collection": "./dist/es/Collection/index.js",
+      "./dist/es/ColumnSizer": "./dist/es/ColumnSizer/index.js",
+      "./dist/es/Grid": "./dist/es/Grid/index.js",
+      "./dist/es/InfiniteLoader": "./dist/es/InfiniteLoader/index.js",
+      "./dist/es/List": "./dist/es/List/index.js",
+      "./dist/es/MultiGrid": "./dist/es/MultiGrid/index.js",
+      "./dist/es/ScrollSync": "./dist/es/ScrollSync/index.js",
+      "./dist/es/Table": "./dist/es/Table/index.js",
+      "./dist/es/WindowScroller": "./dist/es/WindowScroller/index.js"
+    }
+  },
+  "reactcss@1.2.3": {
+    "version": "1.2.3",
+    "dependencies": {
+      "lodash": "4.17.4"
+    },
+    "main": "lib/index.js",
+    "map": {
+      "./modules/react-basic-layout": "./modules/react-basic-layout/index.js",
+      "./modules/react-documentation": "./modules/react-documentation/index.js",
+      "./modules/react-material-design": "./modules/react-material-design/index.js"
+    }
+  },
+  "readable-stream@2.3.3": {
+    "version": "2.3.3",
+    "dependencies": {
+      "core-util-is": "1.0.2",
+      "inherits": "2.0.3",
+      "isarray": "1.0.0",
+      "process-nextick-args": "1.0.7",
+      "safe-buffer": "5.1.1",
+      "string_decoder": "1.0.3",
+      "util-deprecate": "1.0.2"
+    },
+    "browser": {
+      "util": false,
+      "./readable.js": "./readable-browser.js",
+      "./writable.js": "./writable-browser.js",
+      "./duplex.js": "./duplex-browser.js",
+      "./lib/internal/streams/stream.js": "./lib/internal/streams/stream-browser.js"
+    },
+    "main": "readable.js",
+    "map": {}
+  },
+  "isarray@1.0.0": {
+    "version": "1.0.0",
+    "dependencies": {},
+    "main": "index.js",
+    "map": {}
+  },
+  "regenerator-runtime@0.11.1": {
+    "version": "0.11.1",
+    "dependencies": {},
+    "main": "runtime-module.js",
+    "map": {}
+  },
+  "ripemd160@2.0.1": {
+    "version": "2.0.1",
+    "dependencies": {
+      "hash-base": "2.0.2",
+      "inherits": "2.0.3"
+    },
+    "main": "./index",
+    "map": {}
+  },
+  "safe-buffer@5.1.1": {
+    "version": "5.1.1",
+    "dependencies": {},
+    "main": "index.js",
+    "map": {}
+  },
+  "setimmediate@1.0.5": {
+    "version": "1.0.5",
+    "dependencies": {},
+    "main": "setImmediate.js",
+    "map": {}
+  },
+  "sha.js@2.4.9": {
+    "version": "2.4.9",
+    "dependencies": {
+      "inherits": "2.0.3",
+      "safe-buffer": "5.1.1"
+    },
+    "main": "index.js",
+    "map": {}
+  },
+  "stream-browserify@2.0.1": {
+    "version": "2.0.1",
+    "dependencies": {
+      "inherits": "2.0.3",
+      "readable-stream": "2.3.3"
+    },
+    "main": "index.js",
+    "map": {}
+  },
+  "string_decoder@1.0.3": {
+    "version": "1.0.3",
+    "dependencies": {
+      "safe-buffer": "5.1.1"
+    },
+    "main": "lib/string_decoder.js",
+    "map": {}
+  },
+  "tcomb@3.2.24": {
+    "version": "3.2.24",
+    "dependencies": {},
+    "main": "index.js",
+    "map": {}
+  },
+  "tcomb-doc@0.5.2": {
+    "version": "0.5.2",
+    "dependencies": {
+      "tcomb": "3.2.24"
+    },
+    "main": "lib/index.js",
+    "map": {}
+  },
+  "tcomb-form@0.9.19": {
+    "version": "0.9.19",
+    "dependencies": {
+      "tcomb-form-templates-bootstrap": "0.2.4",
+      "tcomb-validation": "3.4.1"
+    },
+    "main": "lib/main.js",
+    "map": {}
+  },
+  "tcomb-form-templates-bootstrap@0.2.4": {
+    "version": "0.2.4",
+    "dependencies": {
+      "classnames": "2.2.5",
+      "tcomb": "3.2.24"
+    },
+    "main": "lib/index.js",
+    "map": {}
+  },
+  "tcomb-react@0.9.3": {
+    "version": "0.9.3",
+    "dependencies": {
+      "doctrine": "0.7.2",
+      "get-comments": "1.0.1",
+      "react": "15.5.4",
+      "tcomb-doc": "0.5.2",
+      "tcomb-validation": "3.4.1"
+    },
+    "main": "index.js",
+    "map": {}
+  },
+  "tcomb-validation@3.4.1": {
+    "version": "3.4.1",
+    "dependencies": {
+      "tcomb": "3.2.24"
+    },
+    "main": "index.js",
+    "map": {}
+  },
+  "timers-browserify@1.4.2": {
+    "version": "1.4.2",
+    "dependencies": {
+      "process": "0.11.10"
+    },
+    "main": "main.js",
+    "map": {}
+  },
+  "tinycolor2@1.4.1": {
+    "version": "1.4.1",
+    "dependencies": {},
+    "main": "./tinycolor.js",
+    "map": {}
+  },
+  "ua-parser-js@0.7.17": {
+    "version": "0.7.17",
+    "dependencies": {},
+    "main": "src/ua-parser.js",
+    "map": {}
+  },
+  "url@0.11.0": {
+    "version": "0.11.0",
+    "dependencies": {
+      "punycode": "1.3.2",
+      "querystring": "0.2.0"
+    },
+    "main": "./url.js",
+    "map": {}
+  },
+  "punycode@1.3.2": {
+    "version": "1.3.2",
+    "dependencies": {},
+    "main": "punycode.js",
+    "map": {}
+  },
+  "util-deprecate@1.0.2": {
+    "version": "1.0.2",
+    "dependencies": {},
+    "browser": "browser.js",
+    "main": "node.js",
+    "map": {}
+  },
+  "victory@0.24.3": {
+    "version": "0.24.3",
+    "dependencies": {
+      "victory-chart": "24.5.0",
+      "victory-core": "20.5.0",
+      "victory-pie": "13.2.0"
+    },
+    "main": "lib/index.js",
+    "map": {}
+  },
+  "victory-chart@24.5.0": {
+    "version": "24.5.0",
+    "dependencies": {
+      "d3-voronoi": "1.1.2",
+      "lodash": "4.17.4",
+      "victory-core": "20.5.0"
+    },
+    "main": "lib/index.js",
+    "map": {}
+  },
+  "victory-core@20.5.0": {
+    "version": "20.5.0",
+    "dependencies": {
+      "d3-ease": "1.0.3",
+      "d3-interpolate": "1.1.6",
+      "d3-scale": "1.0.7",
+      "d3-shape": "1.2.0",
+      "d3-timer": "1.0.7",
+      "lodash": "4.17.4"
+    },
+    "main": "lib/index.js",
+    "map": {}
+  },
+  "victory-pie@13.2.0": {
+    "version": "13.2.0",
+    "dependencies": {
+      "d3-shape": "1.2.0",
+      "lodash": "4.17.4",
+      "victory-core": "20.5.0"
+    },
+    "main": "lib/index.js",
+    "map": {}
+  },
+  "whatwg-fetch@2.0.3": {
+    "version": "2.0.3",
+    "dependencies": {},
+    "main": "fetch.js",
+    "map": {}
+  }
+}
