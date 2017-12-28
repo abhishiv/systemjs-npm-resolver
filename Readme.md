@@ -6,7 +6,7 @@ To build a manifest
 npm run start '{"keese": null, "react": null}'
 ```
 
-The last line of output should be manifest you can feed to [systemjs](public/sandbox/boot/m.json)
+The last line of output should be [manifest](public/sandbox/boot/m.json) you can feed to [systemjs](public/sandbox/boot/m.json)
 
 Open up [index.html](public/sandbox/index.html) and checkout [index.js](public/sandbox/index.js) to see how I feed this to systemjs
 
