@@ -5,8 +5,6 @@ machine:
     version: 8.3
   environment:
     PATH: "${PATH}:${HOME}/.yarn/bin:${HOME}/${CIRCLE_PROJECT_REPONAME}/node_modules/.bin"
-    HYPER_ACCESS: "J5LLE3WXE4YXCRW564WDOR3G"
-    HYPER_SECRET: "EKP7Pepgy6Oc9lxLQ5gQmHe5qbax8bzIMyR5OYbA"
 dependencies:
   override:
     - npm install
