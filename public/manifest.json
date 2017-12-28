@@ -1,0 +1,167 @@
+{
+  "appDependencies": {
+    "react": {
+      "version": "15.6.1",
+      "dependencies": {
+        "create-react-class": "create-react-class@15.6.2",
+        "fbjs": "fbjs@0.8.16",
+        "loose-envify": "loose-envify@1.3.1",
+        "object-assign": "object-assign@4.1.1",
+        "prop-types": "prop-types@15.6.0"
+      },
+      "main": "react.js"
+    },
+    "react-dom": {
+      "version": "15.6.1",
+      "dependencies": {
+        "react": "react@15.6.1",
+        "object-assign": "object-assign@4.1.1",
+        "prop-types": "prop-types@15.6.0",
+        "fbjs": "fbjs@0.8.16",
+        "loose-envify": "loose-envify@1.3.1"
+      },
+      "main": "index.js"
+    },
+    "react-color": {
+      "version": "2.13.8",
+      "dependencies": {
+        "lodash": "lodash@4.17.4",
+        "material-colors": "material-colors@1.2.5",
+        "prop-types": "prop-types@15.6.0",
+        "reactcss": "reactcss@1.2.3",
+        "tinycolor2": "tinycolor2@1.4.1"
+      },
+      "main": "lib/index.js"
+    }
+  },
+  "resDependencies": {
+    "create-react-class@15.6.2": {
+      "dependencies": {
+        "fbjs": "fbjs@0.8.16",
+        "loose-envify": "loose-envify@1.3.1",
+        "object-assign": "object-assign@4.1.1"
+      },
+      "main": "index.js"
+    },
+    "fbjs@0.8.16": {
+      "dependencies": {
+        "core-js": "core-js@1.2.7",
+        "isomorphic-fetch": "isomorphic-fetch@2.2.1",
+        "loose-envify": "loose-envify@1.3.1",
+        "object-assign": "object-assign@4.1.1",
+        "promise": "promise@7.3.1",
+        "setimmediate": "setimmediate@1.0.5",
+        "ua-parser-js": "ua-parser-js@0.7.17"
+      },
+      "main": "index.js"
+    },
+    "core-js@1.2.7": {
+      "dependencies": {},
+      "main": "index.js"
+    },
+    "isomorphic-fetch@2.2.1": {
+      "dependencies": {
+        "node-fetch": "node-fetch@1.7.3",
+        "whatwg-fetch": "whatwg-fetch@2.0.3"
+      },
+      "main": "fetch-npm-node.js",
+      "browser": "fetch-npm-browserify.js"
+    },
+    "node-fetch@1.7.3": {
+      "dependencies": {
+        "encoding": "encoding@0.1.12",
+        "is-stream": "is-stream@1.1.0"
+      },
+      "main": "index.js"
+    },
+    "encoding@0.1.12": {
+      "dependencies": {
+        "iconv-lite": "iconv-lite@0.4.19"
+      },
+      "main": "lib/encoding.js"
+    },
+    "iconv-lite@0.4.19": {
+      "dependencies": {},
+      "main": "./lib/index.js",
+      "browser": {
+        "./extend-node": false,
+        "./streams": false
+      },
+      "typings": "./lib/index.d.ts"
+    },
+    "is-stream@1.1.0": {
+      "dependencies": {}
+    },
+    "whatwg-fetch@2.0.3": {
+      "dependencies": {},
+      "main": "fetch.js"
+    },
+    "loose-envify@1.3.1": {
+      "dependencies": {
+        "js-tokens": "js-tokens@3.0.2"
+      },
+      "main": "index.js"
+    },
+    "js-tokens@3.0.2": {
+      "dependencies": {}
+    },
+    "object-assign@4.1.1": {
+      "dependencies": {}
+    },
+    "promise@7.3.1": {
+      "dependencies": {
+        "asap": "asap@2.0.6"
+      },
+      "main": "index.js"
+    },
+    "asap@2.0.6": {
+      "dependencies": {},
+      "main": "./asap.js",
+      "browser": {
+        "./asap": "./browser-asap.js",
+        "./asap.js": "./browser-asap.js",
+        "./raw": "./browser-raw.js",
+        "./raw.js": "./browser-raw.js",
+        "./test/domain.js": "./test/browser-domain.js"
+      }
+    },
+    "setimmediate@1.0.5": {
+      "dependencies": {},
+      "main": "setImmediate.js"
+    },
+    "ua-parser-js@0.7.17": {
+      "dependencies": {},
+      "main": "src/ua-parser.js"
+    },
+    "prop-types@15.6.0": {
+      "dependencies": {
+        "fbjs": "fbjs@0.8.16",
+        "loose-envify": "loose-envify@1.3.1",
+        "object-assign": "object-assign@4.1.1"
+      },
+      "main": "index.js"
+    },
+    "lodash@4.17.4": {
+      "dependencies": {},
+      "main": "lodash.js"
+    },
+    "material-colors@1.2.5": {
+      "dependencies": {},
+      "main": "dist/colors.js",
+      "module": "dist/colors.es2015.js"
+    },
+    "reactcss@1.2.3": {
+      "dependencies": {
+        "lodash": "lodash@4.17.4"
+      },
+      "main": "lib/index.js"
+    },
+    "tinycolor2@1.4.1": {
+      "dependencies": {},
+      "main": "./tinycolor.js"
+    }
+  },
+  "warnings": {
+    "invalidPeers": {}
+  }
+}
