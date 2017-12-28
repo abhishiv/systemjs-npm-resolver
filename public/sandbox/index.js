@@ -68,8 +68,8 @@ function prepareConfig(manifest) {
     var packages = computeConfigPackages(manifest)
     resolve({
       paths: {
-        'npm:': 'https://cdn.jsdelivr.net/npm/',
-        '*': 'https://unpkg.com/',
+        'npm:': 'https://unpkg.com/',
+        '*': 'https://cdn.jsdelivr.net/npm/',
       },
       packages: packages,
       map: map,
